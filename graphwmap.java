@@ -28,6 +28,36 @@ class Graph{
             System.out.println();
         }
     }
+        class Pair{
+        int ver;
+        String psf;
+        public Pair(int ver , String psf){
+            this.ver=ver;
+            this.psf=psf;
+        }
+    }
+    void bfs(int src){
+        ArrayDeque<Pair> queue=new ArrayDeque<>();
+        queue.add(new Pair(src,src+""));
+        boolean vis[]=new boolean[a.length];
+        while(queue.size()>0){
+            Pair temp=queue.removeFirst();
+            if(vis[temp.ver]){
+                continue;
+            }
+            vis[temp.ver]=true;
+            System.out.println(temp.ver+"@"+temp.psf+" ");
+            for(int b:a[temp.ver]){
+                
+                    
+                    if(vis[b]==false){
+                        queue.add(new Pair(b,temp.psf+b));
+                    }
+                
+                
+            }
+        }
+    }
 }
 class HelloWorld {
     public static void main(String[] args) {
