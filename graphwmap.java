@@ -36,6 +36,26 @@ class Graph{
             this.psf=psf;
         }
     }
+     void dfs(int src){
+        Stack<Pair> stack=new Stack<>();
+        stack.push(new Pair(src,src+""));
+        boolean[] vis=new boolean[a.length];
+        while(stack.size()>0){
+            Pair temp=stack.pop();
+            if(vis[temp.ver]){
+                continue;
+            }
+            vis[temp.ver]=true;
+           System.out.println(temp.ver+"@"+temp.psf+" ");
+
+            for(int b:a[temp.ver]){
+                if(!vis[b]){
+                    stack.push(new Pair(b,temp.psf+b));
+                }
+            }
+            
+        }
+    }
     void bfs(int src){
         ArrayDeque<Pair> queue=new ArrayDeque<>();
         queue.add(new Pair(src,src+""));
