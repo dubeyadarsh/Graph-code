@@ -12,3 +12,6 @@ class Solution {
         return al;
     }
 }
+// 1)A node that does not have any incoming edge can only be reached by itself.
+// 2)Any other node with incoming edges can be reached from some other node
+// 3) We only have to count the number of nodes with zero incoming edges.
